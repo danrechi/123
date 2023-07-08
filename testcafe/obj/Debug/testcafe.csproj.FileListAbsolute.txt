@@ -1,0 +1,17 @@
+C:\Users\Данил\source\repos\testcafe\testcafe\bin\Debug\testcafe.exe.config
+C:\Users\Данил\source\repos\testcafe\testcafe\bin\Debug\testcafe.exe
+C:\Users\Данил\source\repos\testcafe\testcafe\bin\Debug\testcafe.pdb
+C:\Users\Данил\source\repos\testcafe\testcafe\obj\Debug\testcafe.csproj.AssemblyReference.cache
+C:\Users\Данил\source\repos\testcafe\testcafe\obj\Debug\testcafe.csproj.SuggestedBindingRedirects.cache
+C:\Users\Данил\source\repos\testcafe\testcafe\obj\Debug\MainWindow.baml
+C:\Users\Данил\source\repos\testcafe\testcafe\obj\Debug\MainWindow.g.cs
+C:\Users\Данил\source\repos\testcafe\testcafe\obj\Debug\App.g.cs
+C:\Users\Данил\source\repos\testcafe\testcafe\obj\Debug\testcafe_MarkupCompile.cache
+C:\Users\Данил\source\repos\testcafe\testcafe\obj\Debug\testcafe.g.resources
+C:\Users\Данил\source\repos\testcafe\testcafe\obj\Debug\testcafe.Properties.Resources.resources
+C:\Users\Данил\source\repos\testcafe\testcafe\obj\Debug\testcafe.csproj.GenerateResource.cache
+C:\Users\Данил\source\repos\testcafe\testcafe\obj\Debug\testcafe.csproj.CoreCompileInputs.cache
+C:\Users\Данил\source\repos\testcafe\testcafe\obj\Debug\testcafe.exe
+C:\Users\Данил\source\repos\testcafe\testcafe\obj\Debug\testcafe.pdb
+C:\Users\Данил\source\repos\testcafe\testcafe\obj\Debug\Table.baml
+C:\Users\Данил\source\repos\testcafe\testcafe\obj\Debug\Table.g.cs

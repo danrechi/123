@@ -1,0 +1,15 @@
+﻿<Window x:Class="Wpf_cafe.TableWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Your Application" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Food">
+                <DataGrid x:Name="foodDataGrid" AutoGenerateColumns="True" />
+            </TabItem>
+            <TabItem Header="Products">
+                <DataGrid x:Name="productsDataGrid" AutoGenerateColumns="True" />
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
