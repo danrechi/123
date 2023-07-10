@@ -19,12 +19,8 @@ namespace Wpf_cafe
             if (AuthenticateUser(username, password))
             {
                 MessageBox.Show("Login successful!");
-
-                // Открывает окно с таблицами
                 TableWindow tableWindow = new TableWindow();
                 tableWindow.Show();
-
-                // Закрывает окно авторизации
                 Close();
             }
             else
