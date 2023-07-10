@@ -18,14 +18,13 @@ namespace Wpf_cafe
 
             if (AuthenticateUser(username, password))
             {
-                MessageBox.Show("Login successful!");
                 TableWindow tableWindow = new TableWindow();
                 tableWindow.Show();
                 Close();
             }
             else
             {
-                MessageBox.Show("Invalid username or password.");
+                MessageBox.Show("Неверный логин или пароль.");
             }
         }
 
