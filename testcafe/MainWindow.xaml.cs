@@ -1,11 +1,12 @@
-﻿using System.Data.SqlClient;
+﻿using Npgsql;
+using System;
 using System.Windows;
 
 namespace Wpf_cafe
 {
     public partial class MainWindow : Window
     {
-        private const string ConnectionString = "Server=DESKTOP-PGFL9BA\\SQLEXPRESS;Database=master;Encrypt=False;Trusted_Connection=True";
+        private const string ConnectionString = "Host=localhost;Port=5432;Database=cafe;Username=postgres;Password=2104;";
         public MainWindow()
         {
             InitializeComponent();
@@ -30,16 +31,16 @@ namespace Wpf_cafe
 
         private bool AuthenticateUser(string username, string password)
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (NpgsqlConnection connection = new NpgsqlConnection(ConnectionString))
             {
                 connection.Open();
 
                 string query = "SELECT COUNT(*) FROM Users WHERE Username = @Username AND Password = @Password";
-                SqlCommand command = new SqlCommand(query, connection);
+                NpgsqlCommand command = new NpgsqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Username", username);
                 command.Parameters.AddWithValue("@Password", password);
 
-                int count = (int)command.ExecuteScalar();
+                int count = Convert.ToInt32(command.ExecuteScalar());
                 return count > 0;
             }
         }

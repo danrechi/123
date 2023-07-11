@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Data;
-using System.Data.SqlClient;
+using Npgsql;
 using System;
 using System.Linq;
 
@@ -8,7 +8,7 @@ namespace Wpf_cafe
 {
     public partial class TableWindow : Window
     {
-        private const string ConnectionString = "Server=DESKTOP-PGFL9BA\\SQLEXPRESS;Database=master;Encrypt=False;Trusted_Connection=True";
+        private const string ConnectionString = "Host=localhost;Port=5432;Database=cafe;Username=postgres;Password=2104;";
 
         public TableWindow()
         {
@@ -19,11 +19,11 @@ namespace Wpf_cafe
 
         private void LoadFoodData()
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (NpgsqlConnection connection = new NpgsqlConnection(ConnectionString))
             {
                 connection.Open();
                 string query = "SELECT * FROM Food";
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
 
@@ -33,11 +33,11 @@ namespace Wpf_cafe
 
         private void LoadProductsData()
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (NpgsqlConnection connection = new NpgsqlConnection(ConnectionString))
             {
                 connection.Open();
                 string query = "SELECT * FROM Products";
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
 
@@ -99,12 +99,12 @@ namespace Wpf_cafe
 
         private void AddFood(string foodType)
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (NpgsqlConnection connection = new NpgsqlConnection(ConnectionString))
             {
                 connection.Open();
 
                 string query = "INSERT INTO Food (Type) VALUES (@Type)";
-                SqlCommand command = new SqlCommand(query, connection);
+                NpgsqlCommand command = new NpgsqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Type", foodType);
 
                 int rowsAffected = command.ExecuteNonQuery();
@@ -122,12 +122,12 @@ namespace Wpf_cafe
 
         private void DeleteFood(int foodId)
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (NpgsqlConnection connection = new NpgsqlConnection(ConnectionString))
             {
                 connection.Open();
 
                 string query = "DELETE FROM Food WHERE Id = @FoodId";
-                SqlCommand command = new SqlCommand(query, connection);
+                NpgsqlCommand command = new NpgsqlCommand(query, connection);
                 command.Parameters.AddWithValue("@FoodId", foodId);
 
                 int rowsAffected = command.ExecuteNonQuery();
@@ -147,12 +147,12 @@ namespace Wpf_cafe
             int foodTypeId;
             if (int.TryParse(foodType, out foodTypeId))
             {
-                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                using (NpgsqlConnection connection = new NpgsqlConnection(ConnectionString))
                 {
                     connection.Open();
 
                     string query = "INSERT INTO Products (Name, FoodType, Price) VALUES (@Name, @FoodType, @Price)";
-                    SqlCommand command = new SqlCommand(query, connection);
+                    NpgsqlCommand command = new NpgsqlCommand(query, connection);
                     command.Parameters.AddWithValue("@Name", name);
                     command.Parameters.AddWithValue("@FoodType", foodTypeId);
                     command.Parameters.AddWithValue("@Price", price);
@@ -179,12 +179,12 @@ namespace Wpf_cafe
 
         private void DeleteProduct(int productId)
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (NpgsqlConnection connection = new NpgsqlConnection(ConnectionString))
             {
                 connection.Open();
 
                 string query = "DELETE FROM Products WHERE Id = @ProductId";
-                SqlCommand command = new SqlCommand(query, connection);
+                NpgsqlCommand command = new NpgsqlCommand(query, connection);
                 command.Parameters.AddWithValue("@ProductId", productId);
 
                 int rowsAffected = command.ExecuteNonQuery();
