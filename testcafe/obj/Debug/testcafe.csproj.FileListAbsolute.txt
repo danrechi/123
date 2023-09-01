@@ -46,3 +46,7 @@ C:\Users\Данил\source\repos\testcafe\testcafe\bin\Debug\System.Threading.Ch
 C:\Users\Данил\source\repos\testcafe\testcafe\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Данил\source\repos\testcafe\testcafe\bin\Debug\System.ValueTuple.xml
 C:\Users\Данил\source\repos\testcafe\testcafe\obj\Debug\testcafe.csproj.CopyComplete
+C:\Users\Данил\source\repos\testcafe\testcafe\bin\Debug\testcafe.exe.manifest
+C:\Users\Данил\source\repos\testcafe\testcafe\bin\Debug\testcafe.application
+C:\Users\Данил\source\repos\testcafe\testcafe\obj\Debug\testcafe.exe.manifest
+C:\Users\Данил\source\repos\testcafe\testcafe\obj\Debug\testcafe.application
